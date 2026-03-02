@@ -135,8 +135,7 @@ Aplicação de máscara para telefone brasileiro
 
 Controle de entrada de dados numéricos
 
-## Publicação
-Organização do Código
+## Organização do Código
 HTML
 
 Estrutura semântica e separação clara de seções institucionais e formulário.
