@@ -1,8 +1,8 @@
-Site Institucional – Psicóloga Sandy Goudard
+## Site Institucional – Psicóloga Sandy Goudard
 
 Site institucional desenvolvido para apresentação profissional, divulgação de serviços e captação de pacientes por meio de formulário integrado ao Google Sheets.
 
-Visão Geral
+## Visão Geral
 
 Este projeto consiste em um site estático responsivo com integração externa para armazenamento de dados e notificação automática.
 O objetivo principal é oferecer uma presença digital profissional, com foco em credibilidade, acessibilidade e facilidade de contato.
@@ -19,7 +19,8 @@ Entrem em contato via WhatsApp
 
 Solicitem agendamento através de formulário online
 
-Funcionalidades
+## Funcionalidades
+
 1. Apresentação Institucional
 
 Seção de apresentação profissional
@@ -46,7 +47,7 @@ Número configurável via JavaScript
 
 4. Formulário de Agendamento
 
-Campos coletados:
+## Campos coletados:
 
 Nome completo
 
@@ -70,7 +71,7 @@ Registro automático em Google Sheets
 
 Notificação por e-mail a cada novo envio
 
-Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 HTML5
 
@@ -84,7 +85,7 @@ Google Sheets
 
 GitHub Pages (hospedagem)
 
-Estrutura do Projeto
+## Estrutura do Projeto
 /
 ├── index.html
 ├── duvidas.html
@@ -134,28 +135,64 @@ Aplicação de máscara para telefone brasileiro
 
 Controle de entrada de dados numéricos
 
-Publicação
+## Publicação
+Organização do Código
+HTML
 
-O projeto pode ser publicado via GitHub Pages:
+Estrutura semântica e separação clara de seções institucionais e formulário.
 
-Acessar Settings
+CSS
 
-Ir em Pages
+Arquivo único centralizado (style.css), responsável por:
 
-Selecionar:
+Layout responsivo
 
-Source: Deploy from a branch
+Paleta de cores personalizada
 
-Branch: main
+Componentização visual
 
-Folder: / (root)
+Estilização de botões e formulários
 
-Salvar
+JavaScript
 
-O site será disponibilizado em:
+Separado em dois arquivos:
 
-https://usuario.github.io/repositorio/
-Segurança e Privacidade
+main.js
+
+Configuração de WhatsApp
+
+Atualização automática do ano
+
+Validação e envio do formulário
+
+Integração com Google Apps Script
+
+phone-mask.js
+
+Aplicação de máscara para telefone brasileiro
+
+Controle de entrada de dados numéricos
+
+## Publicação
+
+Hospedado na Hostinger.
+
+Upload realizado via:
+
+Gerenciador de Arquivos (hPanel)
+ou
+
+FTP (FileZilla)
+
+## Segurança e Privacidade
+
+Os dados coletados pelo formulário são utilizados exclusivamente para contato e agendamento.
+
+Em caso de emergência:
+
+SAMU: 192
+
+CVV: 188
 
 Os dados coletados pelo formulário são utilizados exclusivamente para contato e agendamento.
 
