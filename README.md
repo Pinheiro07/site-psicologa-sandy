@@ -194,9 +194,3 @@ SAMU: 192
 CVV: 188
 
 Os dados coletados pelo formulário são utilizados exclusivamente para contato e agendamento.
-
-Em caso de emergência:
-
-SAMU: 192
-
-CVV: 188
