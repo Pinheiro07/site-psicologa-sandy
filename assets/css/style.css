@@ -1,3 +1,66 @@
+/* ===== Fundo animado (suave, tech, confiável) ===== */
+.bg-animated{
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  /* base do seu marrom pastel + “névoa” tech */
+  background:
+    radial-gradient(1200px 600px at 20% 10%, rgba(255, 255, 255, .22), transparent 60%),
+    radial-gradient(900px 500px at 80% 15%, rgba(254, 168, 194, .18), transparent 60%),
+    radial-gradient(1100px 700px at 60% 90%, rgba(43, 27, 34, .10), transparent 65%),
+    linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,0)),
+    var(--bg);
+
+  filter: saturate(1.05);
+  transform: translate3d(0,0,0);
+}
+
+/* camada de brilho/deslocamento (vento suave) */
+.bg-animated::before{
+  content:"";
+  position:absolute;
+  inset:-20%;
+  background:
+    radial-gradient(600px 400px at 30% 30%, rgba(255,255,255,.14), transparent 60%),
+    radial-gradient(700px 500px at 70% 60%, rgba(110, 75, 58, .14), transparent 62%);
+  opacity: .9;
+  filter: blur(22px);
+  animation: drift 18s ease-in-out infinite;
+}
+
+.bg-animated::after{
+  content:"";
+  position:absolute;
+  inset:-30%;
+  background:
+    radial-gradient(700px 500px at 20% 70%, rgba(254,168,194,.10), transparent 65%),
+    radial-gradient(900px 600px at 80% 30%, rgba(90, 60, 47, .10), transparent 70%);
+  filter: blur(28px);
+  opacity: .75;
+  animation: drift2 26s ease-in-out infinite;
+}
+
+@keyframes drift{
+  0%   { transform: translate(-1.5%, -1%) scale(1.02); }
+  50%  { transform: translate( 1.5%,  1%) scale(1.05); }
+  100% { transform: translate(-1.5%, -1%) scale(1.02); }
+}
+
+@keyframes drift2{
+  0%   { transform: translate( 1%, -1.2%) scale(1.03); }
+  50%  { transform: translate(-1.2%,  1.4%) scale(1.06); }
+  100% { transform: translate( 1%, -1.2%) scale(1.03); }
+}
+
+/* Respeita usuários que preferem menos animação */
+@media (prefers-reduced-motion: reduce){
+  .bg-animated::before,
+  .bg-animated::after{
+    animation: none;
+  }
+}
 .brand{
   display:flex;
   align-items:center;
@@ -61,15 +124,12 @@
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", "Noto Sans", "Liberation Sans", sans-serif;
-      background:
-        radial-gradient(900px 450px at 15% 0%, rgba(254,168,194,.45), transparent 55%),
-        radial-gradient(900px 450px at 85% 10%, rgba(255,210,223,.65), transparent 60%),
-        var(--bg);
-      color:var(--text);
-      line-height:1.5;
-    }
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", "Noto Sans", "Liberation Sans", sans-serif;
+  background: transparent; /* agora o fundo é o .bg-animated */
+  color:var(--text);
+  line-height:1.5;
+}
 
     a{color:inherit; text-decoration:none}
     .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 56px;}
@@ -522,39 +582,32 @@
   }
 }
     :root{
-      /* Base */
-      --bg: #fff7fa;
-      --card: #ffffff;
-      --text: #2b1b22;
-      --muted: #6b4b57;
+  --bg: #e6d5c8;      /* marrom pastel */
+  --card: #ffffff;
+  --text: #2b1b22;
+  --muted: #6b4b57;
 
-      /* Salmão */
-      --brand: #FEA8C2;
-      --brand-2: #ff86ad;
-      --brand-3: #ffd2df;
+  --brand: #FEA8C2;
+  --brand-2: #ff86ad;
+  --brand-3: #ffd2df;
 
-      /* UI */
-      --border: rgba(43,27,34,.12);
-      --shadow: 0 18px 50px rgba(43,27,34,.10);
-      --radius: 22px;
-      --max: 1080px;
+  --border: rgba(43,27,34,.12);
+  --shadow: 0 18px 50px rgba(43,27,34,.10);
+  --radius: 22px;
+  --max: 1080px;
 
-      /* Feedback */
-      --danger:#d84b5a;
-      --ok:#1f9d6a;
-    }
+  --danger:#d84b5a;
+  --ok:#1f9d6a;
+}
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{
+body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", "Noto Sans", "Liberation Sans", sans-serif;
-      background:
-        radial-gradient(900px 450px at 15% 0%, rgba(254,168,194,.45), transparent 55%),
-        radial-gradient(900px 450px at 85% 10%, rgba(255,210,223,.65), transparent 60%),
-        var(--bg);
-      color:var(--text);
-      line-height:1.5;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", "Noto Sans", "Liberation Sans", sans-serif;
+  background: transparent; /* agora o fundo é o .bg-animated */
+  color:var(--text);
+  line-height:1.5;
     }
 
     a{color:inherit; text-decoration:none}
